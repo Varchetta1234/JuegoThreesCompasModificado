@@ -306,19 +306,30 @@ public class Juego {
 	// Calculo de puntaje
 	// -----------------------------------------------------------------
 
-	private int calcularPuntajeDeFicha(int valor) {
-		if (valor < 3) {
-			return 0;
+//	private int calcularPuntajeDeFicha(int valor) {
+//		if (valor < 3) {
+//			return 0;
+//		}
+//
+//		int cantidadDeDuplicaciones = 1;
+//		int valorRestante = valor;
+//
+//		while (valorRestante > 3) {
+//			valorRestante = valorRestante / 2;
+//			cantidadDeDuplicaciones++;
+//		}
+//
+//		return (int) Math.pow(3, cantidadDeDuplicaciones);
+//	}
+
+	public int calcularPuntajeDeFicha(int x) {
+		int puntaje = 0;
+		if (x > 2) {
+			// Calculamos la potencia base 2 usando cambio de base
+			int potencia = (int) (Math.log(x / 3) / Math.log(2)) + 1;
+			puntaje += Math.pow(3, potencia);
 		}
-
-		int cantidadDeDuplicaciones = 1;
-		int valorRestante = valor;
-
-		while (valorRestante > 3) {
-			valorRestante = valorRestante / 2;
-			cantidadDeDuplicaciones++;
-		}
-
-		return (int) Math.pow(3, cantidadDeDuplicaciones);
+		return puntaje;
 	}
+
 }

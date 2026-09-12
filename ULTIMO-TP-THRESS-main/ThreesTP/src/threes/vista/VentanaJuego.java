@@ -111,7 +111,7 @@ public class VentanaJuego extends JFrame {
 	 */
 	private void aplicarLookAndFeelDelSistema() {
 		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+			//UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception excepcion) {
 			// Si no se puede aplicar, seguimos con el look and feel por defecto.
 			excepcion.printStackTrace();
